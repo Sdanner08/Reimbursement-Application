@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Employee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/employee.css">
+</head>
+<body>
+    <!-- Nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-secondary bg-secondary">
+      <div class="container-fluid">
+        <h3 class="headerText" >Reimbursment Application</h3>
+        <button id="logout-btn">Log Out</button>
+      </div>
+    </nav>
+
+
+          <!-- w3 school tabs -->
+          <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'New')">New Submission</button>
+            <button class="tablinks" onclick="openCity(event, 'Pending')">Pending</button>
+            <button class="tablinks" onclick="openCity(event, 'Approved')">Approved</button>
+            <button class="tablinks" onclick="openCity(event, 'Denied')">Denied</button>
+          </div>
+          
+          <!-- Shows tab for the new reimbursment submittion -->
+          <div id="New" class="tabcontent">
+            <form id="newReimbur">
+              <div class="new-form">
+                <div class="form-header">
+                  <h4>New Reimbursment</h4>
+                </div>
+                <div>
+                  <input type="text" id="newDescription" placeholder="Description of Reimbursment"/>
+                </div>
+                <div>
+                  <input type="number" step="0.01" id="newAmount" placeholder="$amount of reimbursment"/>
+                </div>
+                <div class="input-group mb-3">
+                  <label class="input-group-text" for="inputGroupSelect01">Type</label>
+                  <select class="form-select" id="inputGroupSelect01">
+                    <option selected>Please select type</option>
+                    <option value="1">Lodging</option>
+                    <option value="2">Travel</option>
+                    <option value="3">Food</option>
+                    <option value="4">Other</option>
+                  </select>
+                </div>
+                <button class="add" id="addReimburBtn">Submit</button>
+            </div>
+          </form>
+          </div>
+
+          <!-- Shows all employees pending -->
+          <div id="Pending" class="tabcontent">
+            <div id="pendingReimb">
+              <div class="reimburList" id="reimburList"></div>
+            </div>
+          </div>
+          <!-- Shows all employees Approved -->
+          <div id="Approved" class="tabcontent">
+            <div id="approvedReimb">
+              <div class="approvedList" id="approvedList"></div>
+            </div>
+          </div>
+          <!-- Shows all employees Denied -->
+          <div id="Denied" class="tabcontent">
+            <div id="deniedReimb">
+              <div class="deniedList" id="deniedList"></div>
+            </div>
+          </div>
+
+
+
+
+          <script src="../script/global.js"></script>
+          <script src="../script/employee.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</body>
+</html>
